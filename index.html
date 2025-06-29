@@ -148,27 +148,48 @@
                 .st5{font-size:10px;}
                 .clickable{cursor:pointer;}
                 .clickable:hover{opacity:0.7;}
+                .email-clickable{fill:transparent;cursor:pointer;}
+                .email-group:hover #email-line1, .email-group:hover #email-line2 {opacity:0.7; transition: opacity 0.2s ease;}
+                .email-group {cursor:pointer;}
+                .website-clickable{fill:transparent;cursor:pointer;}
+                .website-group:hover #website-line1, .website-group:hover #website-line2 {opacity:0.7; transition: opacity 0.2s ease;}
+                .website-group {cursor:pointer;}
+                .instagram-clickable{fill:transparent;cursor:pointer;}
+                .instagram-group:hover #instagram-line1, .instagram-group:hover #instagram-line2 {opacity:0.7; transition: opacity 0.2s ease;}
+                .instagram-group {cursor:pointer;}
             </style>
             <rect x="0" class="st0" width="136.06" height="87.87"/>
             <rect x="2.83" y="2.83" class="st1" width="130.39" height="82.2"/>
             
             <!-- EMAIL -->
-            <rect x="5.67" y="8.5" class="st2" width="126.14" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6696 16.3506)" class="st3 st4 st5 clickable" onclick="event.stopPropagation(); window.open('mailto:info@alexandragaler.com', '_blank');">INFO@</text>
-            <rect x="5.67" y="19.84" class="st2" width="124.72" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6695 27.6902)" class="st3 st4 st5 clickable" onclick="event.stopPropagation(); window.open('mailto:info@alexandragaler.com', '_blank');">ALEXANDRAGALER.COM</text>
+            <g class="email-group">
+                <rect x="5.67" y="8.5" class="st2" width="126.14" height="8.5"/>
+                <text transform="matrix(1 0 0 1 5.6696 16.3506)" class="st3 st4 st5" id="email-line1">INFO@</text>
+                <rect x="5.67" y="19.84" class="st2" width="124.72" height="8.5"/>
+                <text transform="matrix(1 0 0 1 5.6695 27.6902)" class="st3 st4 st5" id="email-line2">ALEXANDRAGALER.COM</text>
+                <!-- Invisible clickable area covering both email lines -->
+                <rect x="5.67" y="8.5" width="124.72" height="19.34" class="email-clickable" onclick="event.stopPropagation(); window.location.href='mailto:info@alexandragaler.com';"/>
+            </g>
             
             <!-- WEBSITE -->
-            <rect x="5.67" y="34.02" class="st2" width="127.56" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6695 41.8624)" class="st3 st4 st5 clickable" onclick="event.stopPropagation(); window.open('https://www.alexandragaler.com', '_blank');">WWW.</text>
-            <rect x="5.67" y="45.35" class="st2" width="124.72" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6695 53.202)" class="st3 st4 st5 clickable" onclick="event.stopPropagation(); window.open('https://www.alexandragaler.com', '_blank');">ALEXANDRAGALER.COM</text>
+            <g class="website-group">
+                <rect x="5.67" y="34.02" class="st2" width="127.56" height="8.5"/>
+                <text transform="matrix(1 0 0 1 5.6695 41.8624)" class="st3 st4 st5" id="website-line1">WWW.</text>
+                <rect x="5.67" y="45.35" class="st2" width="124.72" height="8.5"/>
+                <text transform="matrix(1 0 0 1 5.6695 53.202)" class="st3 st4 st5" id="website-line2">ALEXANDRAGALER.COM</text>
+                <!-- Invisible clickable area covering both website lines -->
+                <rect x="5.67" y="34.02" width="127.56" height="19.33" class="website-clickable" onclick="event.stopPropagation(); window.open('https://www.alexandragaler.com', '_blank');"/>
+            </g>
             
             <!-- INSTAGRAM -->
-            <rect x="5.67" y="59.53" class="st2" width="127.56" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6695 67.3742)" class="st3 st4 st5">IG:</text>
-            <rect x="5.67" y="70.87" class="st2" width="124.72" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6693 78.7128)" class="st3 st4 st5 clickable" onclick="event.stopPropagation(); window.open('https://instagram.com/alexandra.galer', '_blank');">ALEXANDRA.GALER</text>
+            <g class="instagram-group">
+                <rect x="5.67" y="59.53" class="st2" width="127.56" height="8.5"/>
+                <text transform="matrix(1 0 0 1 5.6695 67.3742)" class="st3 st4 st5" id="instagram-line1">IG:</text>
+                <rect x="5.67" y="70.87" class="st2" width="124.72" height="8.5"/>
+                <text transform="matrix(1 0 0 1 5.6693 78.7128)" class="st3 st4 st5" id="instagram-line2">ALEXANDRA.GALER</text>
+                <!-- Invisible clickable area covering both instagram lines -->
+                <rect x="5.67" y="59.53" width="127.56" height="19.34" class="instagram-clickable" onclick="event.stopPropagation(); window.open('https://instagram.com/alexandra.galer', '_blank');"/>
+            </g>
             </svg>
         </div>
     </div>
