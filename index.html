@@ -65,8 +65,8 @@
     /* Blue circle button for mobile */
     .mobile-button {
       display: none;
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       background-color: #0000FF;
       border-radius: 50%;
       border: none;
@@ -74,6 +74,21 @@
       cursor: pointer;
       outline: none;
       touch-action: manipulation;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     /* Responsive design */
@@ -97,24 +112,28 @@
         display: block;
       }
 
-      /* Make clickable elements red always on mobile */
-      /* .phone-text,
-      #email-line1,
-      #email-line2,
-      #instagram-line1,
-      #instagram-line2 {
-        fill: #FF0000 !important;
-      } */
+             /* Make clickable elements red always on mobile */
+       /* .phone-text,
+       #email-line1,
+       #email-line2,
+       #linkedin-line1,
+       #linkedin-line2,
+       #instagram-line1,
+       #instagram-line2 {
+         fill: #FF0000 !important;
+       } */
 
-      /* Remove hover effects on mobile since they're red always */
-      .phone-group:hover .phone-text,
-      .email-group:hover #email-line1,
-      .email-group:hover #email-line2,
-      .instagram-group:hover #instagram-line1,
-      .instagram-group:hover #instagram-line2 {
-        opacity: 1;
-        fill: #FF0000;
-      }
+       /* Remove hover effects on mobile since they're red always */
+       .phone-group:hover .phone-text,
+       .email-group:hover #email-line1,
+       .email-group:hover #email-line2,
+       .linkedin-group:hover #linkedin-line1,
+       .linkedin-group:hover #linkedin-line2,
+       .instagram-group:hover #instagram-line1,
+       .instagram-group:hover #instagram-line2 {
+         opacity: 1;
+         fill: #FF0000;
+       }
     }
 
     @media (max-width: 480px) {
@@ -307,6 +326,22 @@
           .instagram-group {
             cursor: pointer;
           }
+
+          .linkedin-clickable {
+            fill: transparent;
+            cursor: pointer;
+          }
+
+          .linkedin-group:hover #linkedin-line1,
+          .linkedin-group:hover #linkedin-line2 {
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+            fill: #FF0000;
+          }
+
+          .linkedin-group {
+            cursor: pointer;
+          }
         </style>
         <rect x="0" class="st0" width="136.06" height="87.87" />
         <rect x="2.83" y="2.83" class="st1" width="130.39" height="82.2" />
@@ -323,13 +358,16 @@
             onclick="event.stopPropagation(); window.location.href='mailto:info@alexandragaler.com';" />
         </g>
 
-        <!-- WEBSITE -->
-        <g class="website-group">
+        <!-- LINKEDIN -->
+        <g class="linkedin-group">
           <rect x="5.67" y="34.02" class="st2" width="127.56" height="8.5" />
-          <text transform="matrix(1 0 0 1 5.6695 41.8624)" class="st3 st4 st5" id="website-line1">WWW.</text>
+          <text transform="matrix(1 0 0 1 5.6695 41.8624)" class="st3 st4 st5" id="linkedin-line1">LINKEDIN.COM/IN/</text>
           <rect x="5.67" y="45.35" class="st2" width="124.72" height="8.5" />
           <text transform="matrix(1 0 0 1 5.6695 53.202)" class="st3 st4 st5"
-            id="website-line2">ALEXANDRAGALER.COM</text>
+            id="linkedin-line2">ALEXANDRA-GALER-458185237</text>
+          <!-- Invisible clickable area covering both linkedin lines -->
+          <rect x="5.67" y="34.02" width="127.56" height="19.34" class="linkedin-clickable"
+            onclick="event.stopPropagation(); window.open('https://www.linkedin.com/in/alexandra-galer-458185237', '_blank');" />
         </g>
 
         <!-- INSTAGRAM -->
@@ -387,8 +425,8 @@
         return;
       }
 
-      // Check if the click is not on a clickable element
-      const isClickableElement = event.target.closest('.email-group, .instagram-group, .phone-group');
+             // Check if the click is not on a clickable element
+       const isClickableElement = event.target.closest('.email-group, .linkedin-group, .instagram-group, .phone-group');
 
       if (!isClickableElement) {
         toggleCard();
