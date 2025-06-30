@@ -62,27 +62,64 @@
       opacity: 0.7;
     }
 
+    /* Blue circle button for mobile */
+    .mobile-button {
+      display: none;
+      width: 60px;
+      height: 60px;
+      background-color: #0000FF;
+      border-radius: 50%;
+      border: none;
+      margin: 20px auto 0;
+      cursor: pointer;
+      outline: none;
+      touch-action: manipulation;
+    }
+
     /* Responsive design */
     @media (max-width: 768px) {
       .business-card {
         max-width: 90vw;
+        gap: 15px;
+      }
+
+      /* Remove animation on mobile */
+      .business-card:hover {
+        transform: none;
       }
 
       body {
         padding: 10px;
       }
 
-      .business-card {
-        gap: 15px;
+      /* Show mobile button */
+      .mobile-button {
+        display: block;
+      }
+
+      /* Make clickable elements red always on mobile */
+      /* .phone-text,
+      #email-line1,
+      #email-line2,
+      #instagram-line1,
+      #instagram-line2 {
+        fill: #FF0000 !important;
+      } */
+
+      /* Remove hover effects on mobile since they're red always */
+      .phone-group:hover .phone-text,
+      .email-group:hover #email-line1,
+      .email-group:hover #email-line2,
+      .instagram-group:hover #instagram-line1,
+      .instagram-group:hover #instagram-line2 {
+        opacity: 1;
+        fill: #FF0000;
       }
     }
 
     @media (max-width: 480px) {
       .business-card {
         max-width: 95vw;
-      }
-
-      .business-card {
         gap: 10px;
       }
     }
@@ -149,8 +186,6 @@
           }
 
           .phone-group:hover .phone-text {
-            opacity: 0.7;
-            transition: opacity 0.2s ease;
             fill: #FF0000;
           }
 
@@ -246,8 +281,7 @@
 
           .email-group:hover #email-line1,
           .email-group:hover #email-line2 {
-            opacity: 0.7;
-            transition: opacity 0.2s ease;
+            
             fill: #FF0000;
           }
 
@@ -266,8 +300,7 @@
 
           .instagram-group:hover #instagram-line1,
           .instagram-group:hover #instagram-line2 {
-            opacity: 0.7;
-            transition: opacity 0.2s ease;
+            
             fill: #FF0000;
           }
 
@@ -312,6 +345,9 @@
         </g>
       </svg>
     </div>
+    
+    <!-- Blue circle button for mobile -->
+    <button class="mobile-button" id="mobile-toggle-btn"></button>
   </div>
 
   <script>
@@ -332,14 +368,39 @@
       }
     }
 
-    // Add document-wide click listener
-    document.addEventListener('click', function (event) {
+    // Add mobile button click listener
+    const mobileButton = document.getElementById('mobile-toggle-btn');
+    if (mobileButton) {
+      mobileButton.addEventListener('click', function(event) {
+        event.stopPropagation();
+        toggleCard();
+      });
+    }
+
+    // Check if we're on mobile (screen width <= 768px)
+    const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
+    // Add document-wide click listener only for desktop
+    function handleDocumentClick(event) {
+      // Don't add click listener on mobile
+      if (isMobile()) {
+        return;
+      }
+
       // Check if the click is not on a clickable element
       const isClickableElement = event.target.closest('.email-group, .instagram-group, .phone-group');
 
       if (!isClickableElement) {
         toggleCard();
       }
+    }
+
+    // Add the click listener
+    document.addEventListener('click', handleDocumentClick);
+
+    // Listen for screen size changes to handle device rotation
+    window.matchMedia('(max-width: 768px)').addEventListener('change', function(e) {
+      // Functionality is handled in the click handler itself
     });
   </script>
 </body>
