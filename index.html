@@ -1,216 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandra Galer - Architektin</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexandra Galer - Architektin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Helvetica', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+    body {
+      font-family: 'Helvetica', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-        .business-card {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 600px;
-            width: 100%;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
+    .business-card {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 600px;
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
 
-        .business-card:hover {
-            transform: scale(1.02);
-        }
+    .business-card:hover {
+      transform: scale(1.02);
+    }
 
-        .card-section {
-            width: 100%;
-            background-color: white;
-            border-radius: 2px;
-            overflow: hidden;
-            display: none;
-        }
+    .card-section {
+      width: 100%;
+      background-color: white;
+      border-radius: 2px;
+      overflow: hidden;
+      display: none;
+    }
 
-        .card-section.active {
-            display: block;
-        }
+    .card-section.active {
+      display: block;
+    }
 
-        .card-section svg {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    .card-section svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-        /* Clickable elements in SVG */
-        .clickable {
-            cursor: pointer;
-        }
+    /* Clickable elements in SVG */
+    .clickable {
+      cursor: pointer;
+    }
 
-        .clickable:hover {
-            opacity: 0.7;
-        }
+    .clickable:hover {
+      opacity: 0.7;
+    }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .business-card {
-                max-width: 90vw;
-            }
-            
-            body {
-                padding: 10px;
-            }
-            
-            .business-card {
-                gap: 15px;
-            }
-        }
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .business-card {
+        max-width: 90vw;
+      }
 
-        @media (max-width: 480px) {
-            .business-card {
-                max-width: 95vw;
-            }
-            
-            .business-card {
-                gap: 10px;
-            }
-        }
+      body {
+        padding: 10px;
+      }
 
-        /* Larger screens */
-        @media (min-width: 1024px) {
-            .business-card {
-                max-width: 700px;
-            }
-        }
-    </style>
+      .business-card {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .business-card {
+        max-width: 95vw;
+      }
+
+      .business-card {
+        gap: 10px;
+      }
+    }
+
+    /* Larger screens */
+    @media (min-width: 1024px) {
+      .business-card {
+        max-width: 700px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="business-card" onclick="toggleCard()">
-        <div class="card-section active" id="card1">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 viewBox="0 0 136.06 87.87" style="enable-background:new 0 0 136.06 87.87;" xml:space="preserve">
-            <style type="text/css">
-                .st0{fill:none;stroke:#0000FF;stroke-miterlimit:10;}
-                .st1{fill:none;stroke:#0000FF;stroke-width:0.5;stroke-miterlimit:10;}
-                .st2{fill:none;}
-                .st3{fill:#0000FF;}
-                .st4{font-family:'Helvetica';}
-                .st5{font-size:10px;}
-                .st6{font-size:11px;}
-                .st7{letter-spacing:35;}
-                .st8{font-family:'Helvetica-Bold';}
-            </style>
-            <rect class="st0" width="136.06" height="87.87"/>
-            <rect x="2.83" y="2.83" class="st1" width="82.2" height="82.2"/>
-            <rect x="5.67" y="28.35" class="st2" width="68.03" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6694 36.1938)" class="st3 st4 st5">ARCHITEKTIN </text>
-            <rect x="5.67" y="39.69" class="st2" width="76.54" height="8.5"/>
-            <text transform="matrix(0.9452 0 0 0.94 5.6694 47.8917)" class="st3 st4 st6">DIPL • </text>
-            <text transform="matrix(1 0 0 1 39.583 47.8917)" class="st3 st4 st5">USI/AAM    </text>
-            <rect x="5.67" y="51.02" class="st2" width="76.54" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6694 58.9325)" class="st3 st4 st5">WATTSTR  </text>
-            <text transform="matrix(0.9452 0 0 0.94 61.6211 58.9325)" class="st3 st4 st6">• </text>
-            <text transform="matrix(1 0 0 1 68.1494 58.9325)" class="st3 st4 st5">12 </text>
-            <rect x="5.67" y="62.36" class="st2" width="76.54" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6694 70.271)" class="st3 st4 st5">CH </text>
-            <text transform="matrix(0.9452 0 0 0.94 21.9609 70.271)" class="st3 st4 st6">•</text>
-            <text transform="matrix(1 0 0 1 25.2783 70.271)" class="st3 st4 st5"> 4056 BASEL</text>
-            <rect x="5.67" y="73.7" class="st2" width="76.54" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6694 81.5481)" class="st3 st4 st5">+41 78 692 72 27</text>
-            <rect x="5.67" y="17.01" class="st2" width="76.54" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6696 24.8552)"><tspan x="0" y="0" class="st3 st4 st5">•</tspan><tspan x="3.5" y="0" class="st3 st4 st5 st7">	</tspan><tspan x="41.54" y="0" class="st3 st8 st5">GALER</tspan><tspan x="76.54" y="0" class="st3 st4 st5"> </tspan></text>
-            <rect x="5.67" y="5.67" class="st2" width="76.54" height="8.5"/>
-            <text transform="matrix(1 0 0 1 5.6691 13.5166)"><tspan x="0" y="0" class="st3 st8 st5">ALEXANDRA</tspan><tspan x="62.78" y="0" class="st3 st4 st5">   •</tspan></text>
-            <text transform="matrix(0.9452 0 0 0.94 76.7138 36.1953)" class="st3 st4 st6">•</text>
-            <rect x="110.55" y="5.67" class="st2" width="5.67" height="39.69"/>
-            </svg>
-        </div>
-        
-        <div class="card-section" id="card2">
-            <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 viewBox="0 0 136.06 87.87" style="enable-background:new 0 0 136.06 87.87;" xml:space="preserve">
-            <style type="text/css">
-                .st0{fill:none;stroke:#0000FF;stroke-miterlimit:10;}
-                .st1{fill:none;stroke:#0000FF;stroke-width:0.5;stroke-miterlimit:10;}
-                .st2{fill:none;}
-                .st3{fill:#0000FF;}
-                .st4{font-family:'Helvetica';}
-                .st5{font-size:10px;}
-                .clickable{cursor:pointer;}
-                .clickable:hover{opacity:0.7;}
-                .email-clickable{fill:transparent;cursor:pointer;}
-                .email-group:hover #email-line1, .email-group:hover #email-line2 {opacity:0.7; transition: opacity 0.2s ease;}
-                .email-group {cursor:pointer;}
-                .website-clickable{fill:transparent;cursor:pointer;}
-                .website-group:hover #website-line1, .website-group:hover #website-line2 {opacity:0.7; transition: opacity 0.2s ease;}
-                .website-group {cursor:pointer;}
-                .instagram-clickable{fill:transparent;cursor:pointer;}
-                .instagram-group:hover #instagram-line1, .instagram-group:hover #instagram-line2 {opacity:0.7; transition: opacity 0.2s ease;}
-                .instagram-group {cursor:pointer;}
-            </style>
-            <rect x="0" class="st0" width="136.06" height="87.87"/>
-            <rect x="2.83" y="2.83" class="st1" width="130.39" height="82.2"/>
-            
-            <!-- EMAIL -->
-            <g class="email-group">
-                <rect x="5.67" y="8.5" class="st2" width="126.14" height="8.5"/>
-                <text transform="matrix(1 0 0 1 5.6696 16.3506)" class="st3 st4 st5" id="email-line1">INFO@</text>
-                <rect x="5.67" y="19.84" class="st2" width="124.72" height="8.5"/>
-                <text transform="matrix(1 0 0 1 5.6695 27.6902)" class="st3 st4 st5" id="email-line2">ALEXANDRAGALER.COM</text>
-                <!-- Invisible clickable area covering both email lines -->
-                <rect x="5.67" y="8.5" width="124.72" height="19.34" class="email-clickable" onclick="event.stopPropagation(); window.location.href='mailto:info@alexandragaler.com';"/>
-            </g>
-            
-            <!-- WEBSITE -->
-            <g class="website-group">
-                <rect x="5.67" y="34.02" class="st2" width="127.56" height="8.5"/>
-                <text transform="matrix(1 0 0 1 5.6695 41.8624)" class="st3 st4 st5" id="website-line1">WWW.</text>
-                <rect x="5.67" y="45.35" class="st2" width="124.72" height="8.5"/>
-                <text transform="matrix(1 0 0 1 5.6695 53.202)" class="st3 st4 st5" id="website-line2">ALEXANDRAGALER.COM</text>
-                <!-- Invisible clickable area covering both website lines -->
-                <rect x="5.67" y="34.02" width="127.56" height="19.33" class="website-clickable" onclick="event.stopPropagation(); window.open('https://www.alexandragaler.com', '_blank');"/>
-            </g>
-            
-            <!-- INSTAGRAM -->
-            <g class="instagram-group">
-                <rect x="5.67" y="59.53" class="st2" width="127.56" height="8.5"/>
-                <text transform="matrix(1 0 0 1 5.6695 67.3742)" class="st3 st4 st5" id="instagram-line1">IG:</text>
-                <rect x="5.67" y="70.87" class="st2" width="124.72" height="8.5"/>
-                <text transform="matrix(1 0 0 1 5.6693 78.7128)" class="st3 st4 st5" id="instagram-line2">ALEXANDRA.GALER</text>
-                <!-- Invisible clickable area covering both instagram lines -->
-                <rect x="5.67" y="59.53" width="127.56" height="19.34" class="instagram-clickable" onclick="event.stopPropagation(); window.open('https://instagram.com/alexandra.galer', '_blank');"/>
-            </g>
-            </svg>
-        </div>
+  <div class="business-card">
+    <div class="card-section active" id="card1">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" viewBox="0 0 136.06 87.87" style="enable-background:new 0 0 136.06 87.87;" xml:space="preserve">
+        <style type="text/css">
+          .st0 {
+            fill: none;
+            stroke: #0000FF;
+            stroke-miterlimit: 10;
+          }
+
+          .st1 {
+            fill: none;
+            stroke: #0000FF;
+            stroke-width: 0.5;
+            stroke-miterlimit: 10;
+          }
+
+          .st2 {
+            fill: none;
+          }
+
+          .st3 {
+            fill: #0000FF;
+          }
+
+          .st4 {
+            font-family: 'Helvetica';
+          }
+
+          .st5 {
+            font-size: 10px;
+          }
+
+          .st6 {
+            font-size: 11px;
+          }
+
+          .st7 {
+            letter-spacing: 35;
+          }
+
+          .st8 {
+            font-family: 'Helvetica-Bold';
+          }
+
+          /* Phone hyperlink styles for all devices */
+          .phone-group {
+            cursor: pointer;
+          }
+
+          .phone-group:hover .phone-text {
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+            fill: #FF0000;
+          }
+
+          .phone-clickable {
+            fill: transparent;
+            cursor: pointer;
+          }
+        </style>
+        <rect class="st0" width="136.06" height="87.87" />
+        <rect x="2.83" y="2.83" class="st1" width="82.2" height="82.2" />
+        <rect x="5.67" y="28.35" class="st2" width="68.03" height="8.5" />
+        <text transform="matrix(1 0 0 1 5.6694 36.1938)" class="st3 st4 st5">ARCHITEKTIN </text>
+        <rect x="5.67" y="39.69" class="st2" width="76.54" height="8.5" />
+        <text transform="matrix(0.9452 0 0 0.94 5.6694 47.8917)" class="st3 st4 st6">DIPL • </text>
+        <text transform="matrix(1 0 0 1 39.583 47.8917)" class="st3 st4 st5">USI/AAM </text>
+        <rect x="5.67" y="51.02" class="st2" width="76.54" height="8.5" />
+        <text transform="matrix(1 0 0 1 5.6694 58.9325)" class="st3 st4 st5">WATTSTR </text>
+        <text transform="matrix(0.9452 0 0 0.94 61.6211 58.9325)" class="st3 st4 st6">• </text>
+        <text transform="matrix(1 0 0 1 68.1494 58.9325)" class="st3 st4 st5">12 </text>
+        <rect x="5.67" y="62.36" class="st2" width="76.54" height="8.5" />
+        <text transform="matrix(1 0 0 1 5.6694 70.271)" class="st3 st4 st5">CH </text>
+        <text transform="matrix(0.9452 0 0 0.94 21.9609 70.271)" class="st3 st4 st6">•</text>
+        <text transform="matrix(1 0 0 1 25.2783 70.271)" class="st3 st4 st5"> 4056 BASEL</text>
+        <!-- PHONE (Clickable on all devices) -->
+        <g class="phone-group">
+          <rect x="5.67" y="73.7" class="st2" width="76.54" height="8.5" />
+          <text transform="matrix(1 0 0 1 5.6694 81.5481)" class="st3 st4 st5 phone-text">+41 78 692 72 27</text>
+          <!-- Invisible clickable area for phone -->
+          <rect x="5.67" y="73.7" width="76.54" height="8.5" class="phone-clickable" fill="transparent"
+            onclick="event.stopPropagation(); window.location.href='tel:+41786927227';" />
+        </g>
+        <rect x="5.67" y="17.01" class="st2" width="76.54" height="8.5" />
+        <text transform="matrix(1 0 0 1 5.6696 24.8552)">
+          <tspan x="0" y="0" class="st3 st4 st5">•</tspan>
+          <tspan x="3.5" y="0" class="st3 st4 st5 st7"> </tspan>
+          <tspan x="41.54" y="0" class="st3 st8 st5">GALER</tspan>
+          <tspan x="76.54" y="0" class="st3 st4 st5"> </tspan>
+        </text>
+        <rect x="5.67" y="5.67" class="st2" width="76.54" height="8.5" />
+        <text transform="matrix(1 0 0 1 5.6691 13.5166)">
+          <tspan x="0" y="0" class="st3 st8 st5">ALEXANDRA</tspan>
+          <tspan x="62.78" y="0" class="st3 st4 st5"> •</tspan>
+        </text>
+        <text transform="matrix(0.9452 0 0 0.94 76.7138 36.1953)" class="st3 st4 st6">•</text>
+      </svg>
     </div>
 
-    <script>
-        let currentCard = 1;
-        
-        function toggleCard() {
-            const card1 = document.getElementById('card1');
-            const card2 = document.getElementById('card2');
-            
-            if (currentCard === 1) {
-                card1.classList.remove('active');
-                card2.classList.add('active');
-                currentCard = 2;
-            } else {
-                card2.classList.remove('active');
-                card1.classList.add('active');
-                currentCard = 1;
-            }
-        }
-    </script>
+    <div class="card-section" id="card2">
+      <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" viewBox="0 0 136.06 87.87" style="enable-background:new 0 0 136.06 87.87;" xml:space="preserve">
+        <style type="text/css">
+          .st0 {
+            fill: none;
+            stroke: #0000FF;
+            stroke-miterlimit: 10;
+          }
+
+          .st1 {
+            fill: none;
+            stroke: #0000FF;
+            stroke-width: 0.5;
+            stroke-miterlimit: 10;
+          }
+
+          .st2 {
+            fill: none;
+          }
+
+          .st3 {
+            fill: #0000FF;
+          }
+
+          .st4 {
+            font-family: 'Helvetica';
+          }
+
+          .st5 {
+            font-size: 10px;
+          }
+
+          .clickable {
+            cursor: pointer;
+          }
+
+          .clickable:hover {
+            opacity: 0.7;
+          }
+
+          .email-clickable {
+            fill: transparent;
+            cursor: pointer;
+          }
+
+          .email-group:hover #email-line1,
+          .email-group:hover #email-line2 {
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+            fill: #FF0000;
+          }
+
+          .email-group {
+            cursor: pointer;
+          }
+
+
+
+
+
+          .instagram-clickable {
+            fill: transparent;
+            cursor: pointer;
+          }
+
+          .instagram-group:hover #instagram-line1,
+          .instagram-group:hover #instagram-line2 {
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+            fill: #FF0000;
+          }
+
+          .instagram-group {
+            cursor: pointer;
+          }
+        </style>
+        <rect x="0" class="st0" width="136.06" height="87.87" />
+        <rect x="2.83" y="2.83" class="st1" width="130.39" height="82.2" />
+
+        <!-- EMAIL -->
+        <g class="email-group">
+          <rect x="5.67" y="8.5" class="st2" width="126.14" height="8.5" />
+          <text transform="matrix(1 0 0 1 5.6696 16.3506)" class="st3 st4 st5" id="email-line1">INFO@</text>
+          <rect x="5.67" y="19.84" class="st2" width="124.72" height="8.5" />
+          <text transform="matrix(1 0 0 1 5.6695 27.6902)" class="st3 st4 st5"
+            id="email-line2">ALEXANDRAGALER.COM</text>
+          <!-- Invisible clickable area covering both email lines -->
+          <rect x="5.67" y="8.5" width="124.72" height="19.34" class="email-clickable"
+            onclick="event.stopPropagation(); window.location.href='mailto:info@alexandragaler.com';" />
+        </g>
+
+        <!-- WEBSITE -->
+        <g class="website-group">
+          <rect x="5.67" y="34.02" class="st2" width="127.56" height="8.5" />
+          <text transform="matrix(1 0 0 1 5.6695 41.8624)" class="st3 st4 st5" id="website-line1">WWW.</text>
+          <rect x="5.67" y="45.35" class="st2" width="124.72" height="8.5" />
+          <text transform="matrix(1 0 0 1 5.6695 53.202)" class="st3 st4 st5"
+            id="website-line2">ALEXANDRAGALER.COM</text>
+        </g>
+
+        <!-- INSTAGRAM -->
+        <g class="instagram-group">
+          <rect x="5.67" y="59.53" class="st2" width="127.56" height="8.5" />
+          <text transform="matrix(1 0 0 1 5.6695 67.3742)" class="st3 st4 st5" id="instagram-line1">IG:</text>
+          <rect x="5.67" y="70.87" class="st2" width="124.72" height="8.5" />
+          <text transform="matrix(1 0 0 1 5.6693 78.7128)" class="st3 st4 st5"
+            id="instagram-line2">ALEXANDRA.GALER</text>
+          <!-- Invisible clickable area covering both instagram lines -->
+          <rect x="5.67" y="59.53" width="127.56" height="19.34" class="instagram-clickable"
+            onclick="event.stopPropagation(); window.open('https://instagram.com/alexandra.galer', '_blank');" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    let currentCard = 1;
+
+    function toggleCard() {
+      const card1 = document.getElementById('card1');
+      const card2 = document.getElementById('card2');
+
+      if (currentCard === 1) {
+        card1.classList.remove('active');
+        card2.classList.add('active');
+        currentCard = 2;
+      } else {
+        card2.classList.remove('active');
+        card1.classList.add('active');
+        currentCard = 1;
+      }
+    }
+
+    // Add document-wide click listener
+    document.addEventListener('click', function (event) {
+      // Check if the click is not on a clickable element
+      const isClickableElement = event.target.closest('.email-group, .instagram-group, .phone-group');
+
+      if (!isClickableElement) {
+        toggleCard();
+      }
+    });
+  </script>
 </body>
+
 </html>
